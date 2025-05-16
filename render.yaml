@@ -1,15 +1,16 @@
 services:
   - type: web
-    name: mediacloudsubtrans  # Cambia esto por tu nombre de servicio
+    name: mediacloudsubtrans
     runtime: python
+    pythonVersion: "3.9"
     buildCommand: |
       python -m pip install --upgrade pip
-      pip install -r requirements.txt
+      pip install --no-cache-dir -r requirements.txt
     startCommand: python bot.py
     envVars:
       - key: TELEGRAM_BOT_TOKEN
-        value: 7656468639:AAFZLaXapxnejcnsWnMlfK_m4zPQSvCvUK  # Obtén de @BotFather
+        value: 7656468639:AAFZLaXapxnejcnsWnMlfK_m4zPQSvCvUKo
+      - key: WEBHOOK_URL
+        value: https://mediacloudsubtrans.onrender.com
       - key: RENDER
-        value: true
-      - key: RENDER_SERVICE_NAME
-        value: mediacloudsubtrans  # Debe coincidir con 'name' arriba
+        value: "true"
